@@ -34,7 +34,7 @@ resource "aws_s3_bucket" "lambda_bucket" {
 
 data "archive_file" "lambda_greetings_server" {
   type = "zip"
-  source_dir  = "${path.module}/lambda"
+  source_dir  = "${path.module}/lambda/server"
   output_path = "${path.module}/greetings-server.zip"
 }
 
