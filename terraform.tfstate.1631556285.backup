@@ -1,0 +1,89 @@
+{
+  "version": 4,
+  "terraform_version": "1.0.3",
+  "serial": 74,
+  "lineage": "b8add071-afd4-131e-bd09-5cbcdd4b3cfb",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "data",
+      "type": "archive_file",
+      "name": "lambda_greetings_server",
+      "provider": "provider[\"registry.terraform.io/hashicorp/archive\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "excludes": null,
+            "id": "91ac194d8b3161d4e03b41268b07257f4022c7ec",
+            "output_base64sha256": "G8vajt/oRun60UfhicSoOxATlAp+2VylaZ3qTvH76ms=",
+            "output_file_mode": null,
+            "output_md5": "99c24d1aa8cf3584af2ee69b5b4d05ff",
+            "output_path": "./greetings-server.zip",
+            "output_sha": "91ac194d8b3161d4e03b41268b07257f4022c7ec",
+            "output_size": 33943118,
+            "source": [],
+            "source_content": null,
+            "source_content_filename": null,
+            "source_dir": "./lambda",
+            "source_file": null,
+            "type": "zip"
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_cloudwatch_log_group",
+      "name": "greetings_server_logs",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "status": "tainted",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:logs:ca-central-1:171894252485:log-group:/aws/lambda/greetings_server_fn",
+            "id": "/aws/lambda/greetings_server_fn",
+            "kms_key_id": "",
+            "name": "/aws/lambda/greetings_server_fn",
+            "name_prefix": null,
+            "retention_in_days": 90,
+            "tags": {},
+            "tags_all": {}
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "random_pet.lambda_bucket_name",
+            "aws_iam_role.lambda_exec",
+            "aws_lambda_function.greetings_server_lambda",
+            "aws_s3_bucket.lambda_bucket",
+            "aws_s3_bucket_object.lambda_greetings_server",
+            "data.archive_file.lambda_greetings_server"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "random_pet",
+      "name": "lambda_bucket_name",
+      "provider": "provider[\"registry.terraform.io/hashicorp/random\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "greetings-lambda-indirectly-perfectly-leading-beetle",
+            "keepers": null,
+            "length": 4,
+            "prefix": "greetings-lambda",
+            "separator": "-"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA=="
+        }
+      ]
+    }
+  ]
+}
