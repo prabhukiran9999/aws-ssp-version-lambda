@@ -22,7 +22,7 @@ provider "aws" {
 }
 
 resource "random_pet" "lambda_bucket_name" {
-  prefix = "greetings-lambda"
+  prefix = "greetings"
   length = 4
 }
 
