@@ -18,12 +18,9 @@ jobs:
     
 
     steps:
-   
+    
+    - run: cd ./lambda/client/    
     - uses: actions/checkout@v2
-    
-    
-      
-    - run: cd ./lambda/client/
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
