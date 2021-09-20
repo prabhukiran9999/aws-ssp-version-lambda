@@ -37,7 +37,7 @@ resource "aws_s3_bucket" "lambda_bucket" {
 resource "aws_s3_bucket_object" "lambda_greetings_server" {
   bucket = aws_s3_bucket.lambda_bucket.id
   key    = "greetings-server.zip"
-  source = "./lambda/server
+  source = "./lambda/server"
   
 }
 
