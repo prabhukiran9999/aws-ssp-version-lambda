@@ -43,8 +43,7 @@ jobs:
       - name: Deploying using terraform
              
         run: |
-          cd ./lambda
-          cd ./server
+          
           terraform init
           terraform plan
           terraform apply -auto-approve
