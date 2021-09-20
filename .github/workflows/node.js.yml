@@ -30,8 +30,7 @@ jobs:
           ls -la
           cd ./server
           npm install
-          npm run-script build
-        
+          zip -r greetings-server server        
     
          
     
