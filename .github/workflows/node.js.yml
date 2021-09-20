@@ -28,7 +28,7 @@ jobs:
           ls -la
           cd ./lambda
           ls -la
-          cd ./client
+          cd ./server
           npm install
           npm run-script build
         
