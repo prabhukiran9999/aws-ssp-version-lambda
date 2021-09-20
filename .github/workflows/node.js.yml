@@ -30,7 +30,7 @@ jobs:
           ls -la
           cd ./server
           npm install
-          zip -r greetings-server server        
+          zip -r greetings-server . -i server        
     
          
     
