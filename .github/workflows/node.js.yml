@@ -20,7 +20,7 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-      - name: checkout the repo      
+      - name: checkout the repo and building the front-end    
         uses: actions/checkout@v2
       - name: change the directory
              
@@ -28,6 +28,9 @@ jobs:
           ls -la
           cd ./lambda
           ls -la
+          cd ./client
+          npm install
+          npm build
         
     
          
