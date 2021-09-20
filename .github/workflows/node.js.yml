@@ -22,7 +22,7 @@ jobs:
     steps:
       - name: checkout the repo and building the front-end    
         uses: actions/checkout@v2
-      - name: change the directory
+      - name : building the frontend
              
         run: |
           ls -la
@@ -40,10 +40,12 @@ jobs:
          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }} 
          aws-region: ca-central-1
           
-      - name: cd
+      - name: Deploying using terraform
              
         run: |
           terraform init
+          terraform plan
+          terraform apply
           
           
     
