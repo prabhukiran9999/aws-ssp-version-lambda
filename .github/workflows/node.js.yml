@@ -30,7 +30,7 @@ jobs:
           ls -la
           cd ./server
           npm install
-          zip -r greetings-server.zip .
+          
           ls -la
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
