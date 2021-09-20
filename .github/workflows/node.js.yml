@@ -34,6 +34,7 @@ jobs:
           ls -la
           terraform init
           terraform validate
+          terraform plan
           
         
     
