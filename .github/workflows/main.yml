@@ -13,20 +13,21 @@ jobs:
   ci:
     name: ci
     runs-on: ubuntu-20.04
-    defaults:
-      run:
-        working-directory: ./lambda/client
+    
     
     
 
     steps:
+   
     - uses: actions/checkout@v2
+    
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-   
+        working-directory: ./lambda/client/
+    - run: cd ./lambda/client/
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
