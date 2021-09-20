@@ -32,7 +32,9 @@ jobs:
           npm install
           zip -r greetings-server .  
           ls -la
+          terraform init
           terraform validate
+          
         
     
          
