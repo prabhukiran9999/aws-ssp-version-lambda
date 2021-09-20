@@ -20,12 +20,7 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-      - name: build the front-end      
+      - name: checkout the repo      
       - uses: actions/checkout@v2
-        with:
-          path: ./lambda/client/
-        
-      - run: npm install
-      - run: npm build
-      - run: serve -s build 
+         
     
