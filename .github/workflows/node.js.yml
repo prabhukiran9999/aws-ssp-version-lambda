@@ -32,6 +32,8 @@ jobs:
           npm install
           zip -r greetings-server .  
           ls -la
+          terraform validate
+        
     
          
     
