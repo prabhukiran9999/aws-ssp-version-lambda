@@ -26,5 +26,6 @@ jobs:
           path: ./lambda/client/
         
       - run: npm install
-      - run: npm run build 
+      - run: npm run build
+      - run: serve -s build 
     
