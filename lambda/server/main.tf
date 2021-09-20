@@ -22,8 +22,8 @@ provider "aws" {
 }
 
 resource "random_pet" "lambda_bucket_name" {
-  prefix = "greeting-lambda"
-  length = 2
+  prefix = "greetings-lambda"
+  length = 4
 }
 
 resource "aws_s3_bucket" "lambda_bucket" {
@@ -32,13 +32,17 @@ resource "aws_s3_bucket" "lambda_bucket" {
   force_destroy = true
 }
 
-
+data "archive_file" "lambda_greetings_server" {
+  type = "zip"
+  source_dir  = "${path.module}/lambda"
+  output_path = "${path.module}/greetings-server.zip"
+}
 
 resource "aws_s3_bucket_object" "lambda_greetings_server" {
   bucket = aws_s3_bucket.lambda_bucket.id
   key    = "greetings-server.zip"
-  source = "./lambda/server"
-  
+  source = data.archive_file.lambda_greetings_server.output_path
+  etag = filemd5(data.archive_file.lambda_greetings_server.output_path)
 }
 
 
