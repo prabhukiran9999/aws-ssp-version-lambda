@@ -23,7 +23,8 @@ jobs:
       - name: checkout the repo      
         uses: actions/checkout@v2
       - name: change the directory
-        run: cd /aws-ssp-version-lambda/lambda/client/
+             
+        run: ls -la
         
     
          
