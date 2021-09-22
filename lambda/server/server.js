@@ -22,8 +22,8 @@ const app = express();
 
 if ('true' === process.env.HTTPS) app.use(requireHttps);;
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, '../client/build')));
-app.use(favicon(path.join(__dirname, '../client/build', 'favicon.ico')))
+//app.use(express.static(path.join(__dirname, '../client/build')));
+//app.use(favicon(path.join(__dirname, '../client/build', 'favicon.ico')))
 
 // Remove empty strings (DynamoDB doesn't accept)
 const scrubObject = (obj) => {
