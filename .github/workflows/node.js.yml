@@ -22,7 +22,7 @@ jobs:
     steps:
       - name: checkout the repo and building the Backend    
         uses: actions/checkout@v2
-      - name : building the frontend
+      - name : building the backend
              
         run: |
           
