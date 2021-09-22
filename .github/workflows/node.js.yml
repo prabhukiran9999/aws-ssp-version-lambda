@@ -57,11 +57,11 @@ jobs:
             cd ./lambda/client
             npm install
           
-            npm build
+            npm run build
             
             terraform init
             terraform plan
-            terraform apply -auto-approve
+            #terraform apply -auto-approve
           
             
           
