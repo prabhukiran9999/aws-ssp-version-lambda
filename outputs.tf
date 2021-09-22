@@ -16,7 +16,7 @@ output "function_name" {
   value = aws_lambda_function.greetings_server_lambda.function_name
 }
 
-output "base_url" {
+output "REACT_APP_API_GW_BASE_URL" {
  description = "Base URL for API Gateway stage."
   value = aws_api_gateway_deployment.apideploy.invoke_url
 }
