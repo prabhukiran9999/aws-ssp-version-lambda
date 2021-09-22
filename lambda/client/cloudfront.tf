@@ -67,7 +67,7 @@ resource "aws_cloudfront_distribution" "web_distribution" {
   }
 }
 locals {
-  src_dir      = "./client/build/"
+  src_dir      = "./build/"
   content_type_map = {
     html        = "text/html",
     ico         = "image/x-icon",
