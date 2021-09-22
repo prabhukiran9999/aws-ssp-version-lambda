@@ -50,18 +50,18 @@ jobs:
      
      
      
-      #- name: Building front-end and deploying Frontend using terraform
+      - name: Building front-end and deploying Frontend using terraform
              
-        #run: |
-            #terraform output > ./lambda/client/.env
-            #cd ./lambda/client
-            #npm install
+        run: |
+            terraform output > ./lambda/client/.env
+            cd ./lambda/client
+            npm install
           
-            #npm build
+            npm build
             
-            #terraform init
-            #terraform plan
-            #terraform destroy -auto-approve
+            terraform init
+            terraform plan
+            terraform destroy -auto-approve
           
             
           
