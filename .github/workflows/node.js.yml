@@ -20,7 +20,7 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-      - name: checkout the repo and building the front-end    
+      - name: checkout the repo and building the Backend    
         uses: actions/checkout@v2
       - name : building the frontend
              
@@ -38,13 +38,34 @@ jobs:
          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }} 
          aws-region: ca-central-1
           
-      - name: Deploying using terraform
+      - name: Deploying back-end using terraform
              
         run: |
           
           terraform init
           terraform plan
           terraform destroy -auto-approve
+         
+     
+     
+     
+     
+      #- name: Building front-end and deploying Frontend using terraform
+             
+        #run: |
+            #terraform output > ./lambda/client/.env
+            #cd ./lambda/client
+            #npm install
+          
+            #npm build
+            
+            #terraform init
+            #terraform plan
+            #terraform destroy -auto-approve
+          
+            
+          
+    
   
           
           
