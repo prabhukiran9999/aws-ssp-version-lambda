@@ -25,13 +25,11 @@ jobs:
       - name : building the frontend
              
         run: |
-          ls -la
-          cd ./lambda
-          ls -la
-          cd ./server
-          npm install
           
-          ls -la
+          cd ./lambda/server
+          npm install
+          cd -
+          
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
