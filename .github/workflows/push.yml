@@ -39,7 +39,6 @@ jobs:
         run: |
           
           terraform init
-          terraform plan
           terraform apply -auto-approve
          
      
@@ -56,7 +55,6 @@ jobs:
             CI=false npm run build
             
             terraform init
-            terraform plan
             terraform apply -auto-approve
           
             
